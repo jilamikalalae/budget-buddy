@@ -10,7 +10,9 @@ import UIKit
 class AddTransactionViewController: UIViewController  {
    
     
+    @IBOutlet weak var addTransactionView: UINavigationItem!
     @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var category: UIButton!
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var note: UITextField!
@@ -20,7 +22,9 @@ class AddTransactionViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.amountLabel.text =  self.amountLabel.text!.localized()
+        self.amount.placeholder = self.amount.placeholder!.localized()
+        self.addTransactionView.title = "Add Transaction".localized()
         self.amount.delegate = self
         
     }

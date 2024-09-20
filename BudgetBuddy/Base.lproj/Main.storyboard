@@ -457,7 +457,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Transaction" id="VD6-4m-UIn" propertyAccessControl="localizable"/>
                     <connections>
+                        <outlet property="addTransactionView" destination="VD6-4m-UIn" id="scb-sm-WTN"/>
                         <outlet property="amount" destination="foR-Na-Ykh" id="Sq6-gC-uHt"/>
+                        <outlet property="amountLabel" destination="AaN-9t-R0t" id="iJB-GR-D1x"/>
                         <outlet property="category" destination="oa0-qb-AKW" id="OFB-LJ-Ffe"/>
                         <outlet property="date" destination="tyz-LK-bzD" id="8Eh-RB-jNk"/>
                         <outlet property="note" destination="rls-zU-V9A" id="2l6-ys-oIL"/>
