@@ -26,9 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		760ED11C2C9DEAEB008B9458 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		760ED11D2C9DEB0E008B9458 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
-		760ED11E2C9DEB0F008B9458 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		760ED1222C9DECAF008B9458 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
+		760ED1242C9DECB4008B9458 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		760ED1252C9DEEE8008B9458 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		763E82802C9B175B002CA5B4 /* CategoryViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		763E82822C9B27DA002CA5B4 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		763E82852C9B29A2002CA5B4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 			};
 			buildConfigurationList = 769C6BA22C883BD00065B19B /* Build configuration list for PBXProject "BudgetBuddy" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = th;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -231,8 +231,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				769C6BB12C883BD00065B19B /* Base */,
-				760ED11C2C9DEAEB008B9458 /* en */,
-				760ED11D2C9DEB0E008B9458 /* th */,
+				760ED1222C9DECAF008B9458 /* th */,
+				760ED1242C9DECB4008B9458 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				769C6BB62C883BD30065B19B /* Base */,
-				760ED11E2C9DEB0F008B9458 /* th */,
+				760ED1252C9DEEE8008B9458 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

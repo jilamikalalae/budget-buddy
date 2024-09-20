@@ -1,78 +1,78 @@
 
 /* Class = "UIButton"; normalTitle = "  Set location"; ObjectID = "06z-Ea-xol"; */
-"06z-Ea-xol.normalTitle" = "  Set location";
+"06z-Ea-xol.normalTitle" = "  ตั้งสถานที่";
 
 /* Class = "UILabel"; text = "Expense"; ObjectID = "3EY-lA-4Lw"; */
-"3EY-lA-4Lw.text" = "Expense";
+"3EY-lA-4Lw.text" = "รายจ่าย";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "6aP-ws-S0A"; */
 "6aP-ws-S0A.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Category"; ObjectID = "6u1-y4-4Wm"; */
-"6u1-y4-4Wm.title" = "Category";
+"6u1-y4-4Wm.title" = "หมวดหมู่";
 
 /* Class = "UILabel"; text = "Recent"; ObjectID = "7JI-2o-691"; */
-"7JI-2o-691.text" = "Recent";
+"7JI-2o-691.text" = "ล่าสุด";
 
 /* Class = "UIButton"; configuration.title = "Add"; ObjectID = "88s-1R-Wf3"; */
-"88s-1R-Wf3.configuration.title" = "Add";
+"88s-1R-Wf3.configuration.title" = "เพิ่ม";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "88s-1R-Wf3"; */
 "88s-1R-Wf3.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Select Date"; ObjectID = "9tb-wo-XNU"; */
-"9tb-wo-XNU.text" = "Select Date";
+"9tb-wo-XNU.text" = "เลือกวันที่";
 
 /* Class = "UILabel"; text = "Amount"; ObjectID = "AaN-9t-R0t"; */
-"AaN-9t-R0t.text" = "Amount";
+"AaN-9t-R0t.text" = "จำนวนเงิน";
 
 /* Class = "UILabel"; text = "Income"; ObjectID = "BeF-9D-Cie"; */
-"BeF-9D-Cie.text" = "Income";
+"BeF-9D-Cie.text" = "รายรับ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "CNi-7t-u7k"; */
 "CNi-7t-u7k.text" = "Label";
 
 /* Class = "UILabel"; text = "Date"; ObjectID = "Dga-pr-vAz"; */
-"Dga-pr-vAz.text" = "Date";
+"Dga-pr-vAz.text" = "วันที่";
 
 /* Class = "UILabel"; text = "BB"; ObjectID = "EcN-Uj-zK2"; */
 "EcN-Uj-zK2.text" = "BB";
 
 /* Class = "UILabel"; text = "Report this month"; ObjectID = "FKC-yC-MWT"; */
-"FKC-yC-MWT.text" = "Report this month";
+"FKC-yC-MWT.text" = "รายงานเดือนนี้";
 
 /* Class = "UILabel"; text = "Note"; ObjectID = "FyR-Zr-Smj"; */
-"FyR-Zr-Smj.text" = "Note";
+"FyR-Zr-Smj.text" = "บันทึก";
 
 /* Class = "UITextField"; placeholder = "Enter note"; ObjectID = "FzY-dO-v5D"; */
-"FzY-dO-v5D.placeholder" = "Enter note";
+"FzY-dO-v5D.placeholder" = "กรอกบันทึก";
 
 /* Class = "UILabel"; text = "Location"; ObjectID = "ICP-0D-lBf"; */
-"ICP-0D-lBf.text" = "Location";
+"ICP-0D-lBf.text" = "สถานที่";
 
 /* Class = "UILabel"; text = "Expense"; ObjectID = "ISN-2G-oC9"; */
-"ISN-2G-oC9.text" = "Expense";
+"ISN-2G-oC9.text" = "รายจ่าย";
 
 /* Class = "UILabel"; text = "Location"; ObjectID = "Ijl-UM-uYt"; */
-"Ijl-UM-uYt.text" = "Location";
+"Ijl-UM-uYt.text" = "สถาน";
 
 /* Class = "UILabel"; text = "Amount"; ObjectID = "Jcb-cD-mBZ"; */
-"Jcb-cD-mBZ.text" = "Amount";
+"Jcb-cD-mBZ.text" = "รายจ่าย";
 
 /* Class = "UILabel"; text = "category of transaction"; ObjectID = "KOs-4b-pvt"; */
-"KOs-4b-pvt.text" = "category of transaction";
+"KOs-4b-pvt.text" = "หมวดหมู่ของรายการ";
 
 /* Class = "UITabBarItem"; title = "Add"; ObjectID = "NGk-aW-EQb"; */
-"NGk-aW-EQb.title" = "Add";
+"NGk-aW-EQb.title" = "เพิ่ม";
 
 /* Class = "UILabel"; text = "Category"; ObjectID = "NdH-Ym-bQ8"; */
-"NdH-Ym-bQ8.text" = "Category";
+"NdH-Ym-bQ8.text" = "หมวดหมู่";
 
 /* Class = "UITextField"; placeholder = "Enter amount"; ObjectID = "Nru-3a-evo"; */
-"Nru-3a-evo.placeholder" = "Enter amount";
+"Nru-3a-evo.placeholder" = "จำนวนเงิน";
 
 /* Class = "UIButton"; configuration.title = "Sing out"; ObjectID = "SyG-3q-V6R"; */
-"SyG-3q-V6R.configuration.title" = "Sing out";
+"SyG-3q-V6R.configuration.title" = "ออกจากระบบ";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "SyG-3q-V6R"; */
 "SyG-3q-V6R.normalTitle" = "Button";
@@ -81,19 +81,19 @@
 "Syr-bH-5wQ.text" = "฿9999999.99";
 
 /* Class = "UITabBarItem"; title = "Transaction"; ObjectID = "Tlc-QC-MOt"; */
-"Tlc-QC-MOt.title" = "Transaction";
+"Tlc-QC-MOt.title" = "รายการ";
 
 /* Class = "UINavigationItem"; title = "Add Transaction"; ObjectID = "VD6-4m-UIn"; */
-"VD6-4m-UIn.title" = "Add Transaction";
+"VD6-4m-UIn.title" = "เพิ่มรายการ";
 
 /* Class = "UILabel"; text = "฿99999.999"; ObjectID = "Vtp-Vi-W3E"; */
 "Vtp-Vi-W3E.text" = "฿99999.999";
 
 /* Class = "UILabel"; text = "amount"; ObjectID = "d1X-3L-ctJ"; */
-"d1X-3L-ctJ.text" = "amount";
+"d1X-3L-ctJ.text" = "จำนวนเงิน";
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "e2u-8B-jDy"; */
-"e2u-8B-jDy.configuration.title" = "Save";
+"e2u-8B-jDy.configuration.title" = "บันทึก";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "e2u-8B-jDy"; */
 "e2u-8B-jDy.normalTitle" = "Button";
@@ -102,46 +102,46 @@
 "eHE-Eq-Xaj.text" = "Log in";
 
 /* Class = "UITabBarItem"; title = "Home"; ObjectID = "ebT-12-MJ2"; */
-"ebT-12-MJ2.title" = "Home";
+"ebT-12-MJ2.title" = "หน้าหลัก";
 
 /* Class = "UILabel"; text = "BudgetBuddy"; ObjectID = "fUr-JK-aFE"; */
 "fUr-JK-aFE.text" = "BudgetBuddy";
 
 /* Class = "UIButton"; configuration.title = "Delete"; ObjectID = "fhe-Ey-qog"; */
-"fhe-Ey-qog.configuration.title" = "Delete";
+"fhe-Ey-qog.configuration.title" = "ลบ";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fhe-Ey-qog"; */
 "fhe-Ey-qog.normalTitle" = "Button";
 
 /* Class = "UITextField"; placeholder = "Enter amount"; ObjectID = "foR-Na-Ykh"; */
-"foR-Na-Ykh.placeholder" = "Enter amount";
+"foR-Na-Ykh.placeholder" = "จำนวนเงิน";
 
 /* Class = "UILabel"; text = "Income"; ObjectID = "gpd-TW-wV7"; */
-"gpd-TW-wV7.text" = "Income";
+"gpd-TW-wV7.text" = "รายรับ";
 
 /* Class = "UILabel"; text = "9999999.99"; ObjectID = "keC-ga-CSA"; */
 "keC-ga-CSA.text" = "9999999.99";
 
 /* Class = "UIButton"; configuration.title = "Delete account"; ObjectID = "kpU-vu-Vrf"; */
-"kpU-vu-Vrf.configuration.title" = "Delete account";
+"kpU-vu-Vrf.configuration.title" = "ลบบัญชี";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kpU-vu-Vrf"; */
 "kpU-vu-Vrf.normalTitle" = "Button";
 
 /* Class = "UIButton"; normalTitle = "  Set location"; ObjectID = "mXE-DQ-Seh"; */
-"mXE-DQ-Seh.normalTitle" = "  Set location";
+"mXE-DQ-Seh.normalTitle" = "  ตั้งสถานที่";
 
 /* Class = "UIButton"; normalTitle = "Select category"; ObjectID = "oa0-qb-AKW"; */
-"oa0-qb-AKW.normalTitle" = "Select category";
+"oa0-qb-AKW.normalTitle" = "เลือกหมวดหมู่";
 
 /* Class = "UITabBarItem"; title = "Account"; ObjectID = "ory-1c-UUT"; */
-"ory-1c-UUT.title" = "Account";
+"ory-1c-UUT.title" = "บัญชี";
 
 /* Class = "UILabel"; text = "9999999.99"; ObjectID = "pBe-9y-MlJ"; */
 "pBe-9y-MlJ.text" = "9999999.99";
 
 /* Class = "UIButton"; normalTitle = "Select category"; ObjectID = "pc7-we-3Io"; */
-"pc7-we-3Io.normalTitle" = "Select category";
+"pc7-we-3Io.normalTitle" = "เลือกหมวดหมู่";
 
 /* Class = "UILabel"; text = "Dateeeeeeeeeeeeeeeeeeeeeeeeeeeee"; ObjectID = "piq-Nq-SdE"; */
 "piq-Nq-SdE.text" = "Dateeeeeeeeeeeeeeeeeeeeeeeeeeeee";
@@ -150,22 +150,22 @@
 "qe9-V2-fcq.text" = "Already have an account?";
 
 /* Class = "UILabel"; text = "Note"; ObjectID = "rk7-fM-qXS"; */
-"rk7-fM-qXS.text" = "Note";
+"rk7-fM-qXS.text" = "บันทึก";
 
 /* Class = "UITextField"; placeholder = "Enter note"; ObjectID = "rls-zU-V9A"; */
-"rls-zU-V9A.placeholder" = "Enter note";
+"rls-zU-V9A.placeholder" = "กรอกบันทึก";
 
 /* Class = "UILabel"; text = "My account@email.com"; ObjectID = "sGM-vO-7R7"; */
 "sGM-vO-7R7.text" = "My account@email.com";
 
 /* Class = "UILabel"; text = "Date"; ObjectID = "uQO-Gg-cSw"; */
-"uQO-Gg-cSw.text" = "Date";
+"uQO-Gg-cSw.text" = "วันที่";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vPH-OC-Re9"; */
 "vPH-OC-Re9.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Category"; ObjectID = "wgJ-My-RN3"; */
-"wgJ-My-RN3.text" = "Category";
+"wgJ-My-RN3.text" = "หมวดหมู่";
 
 /* Class = "UIButton"; configuration.title = "Sign in With Google"; ObjectID = "xZk-AL-Gxo"; */
 "xZk-AL-Gxo.configuration.title" = "Sign in With Google";
@@ -174,7 +174,7 @@
 "xZk-AL-Gxo.normalTitle" = "Button";
 
 /* Class = "UINavigationItem"; title = "Account"; ObjectID = "xau-TA-ZWx"; */
-"xau-TA-ZWx.title" = "Account";
+"xau-TA-ZWx.title" = "บัญชี";
 
 /* Class = "UINavigationItem"; title = "Transaction"; ObjectID = "zet-5k-QTZ"; */
-"zet-5k-QTZ.title" = "Transaction";
+"zet-5k-QTZ.title" = "รายการ";
