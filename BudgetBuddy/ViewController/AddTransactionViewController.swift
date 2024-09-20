@@ -7,20 +7,21 @@
 
 import UIKit
 
-class AddTransactionViewController: UIViewController,CategoryViewCellProtocol {
+class AddTransactionViewController: UIViewController  {
    
     
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var category: UIButton!
     @IBOutlet weak var date: UIDatePicker!
-    
-//    let categoryViewController = CategoryViewController()
+    @IBOutlet weak var note: UITextField!
+
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        categoryViewController.delegate = self
+        self.amount.delegate = self
         
     }
     
@@ -30,18 +31,28 @@ class AddTransactionViewController: UIViewController,CategoryViewCellProtocol {
            if let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as? CategoryViewController {
                categoryVC.delegate = self // Set delegate before presenting
                self.present(categoryVC, animated: true, completion: nil)
+               
            }
        }
-    
-    
+
+        
+}
+
+extension AddTransactionViewController: CategoryViewDelegate {
     func categorySelected(_ category: Category) {
         self.category.setTitle(category.name, for: .normal)
         self.category.setTitleColor(UIColor.black, for: .normal)
         
         print("Result from server is \(category)")
     }
-    
-        
 }
 
- 
+extension AddTransactionViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return amount.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}

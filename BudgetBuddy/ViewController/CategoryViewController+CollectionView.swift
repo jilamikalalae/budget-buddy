@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol CategoryViewCellProtocol{
+protocol CategoryViewDelegate{
     func categorySelected(_ category: Category)
 }
 
 class CategoryViewController: UIViewController {
     
-    var delegate: CategoryViewCellProtocol?
+    var delegate: CategoryViewDelegate?
     
     @IBOutlet weak var categoryType: UILabel!
     
