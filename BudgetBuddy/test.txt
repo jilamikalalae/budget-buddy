@@ -1,0 +1,25 @@
+{
+    "items" : [
+        {
+            "month": "September 2024",
+            "image": "car",
+            "category": "parking fee",
+            "date": "Tuesday 10",
+            "amount" : 30
+        },
+        {
+            "month": "September 2024",
+            "image": "food",
+            "category": "food",
+            "date": "Wedneday 11",
+            "amount" : 89
+        },
+	{
+            "month": "September 2024",
+            "image": "drinks",
+            "category": "drink",
+            "date": "Thursday 12",
+            "amount" : 25
+        }
+ ]
+}
