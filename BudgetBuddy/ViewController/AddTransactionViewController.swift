@@ -104,7 +104,7 @@ class AddTransactionViewController: UIViewController  {
     func navigateToTransaction() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarC") as! TabBarController
-        tabBarController.selectedIndex = 2
+        tabBarController.selectedIndex = 0
         self.view.window?.rootViewController = tabBarController
         self.view.window?.makeKeyAndVisible()
     }

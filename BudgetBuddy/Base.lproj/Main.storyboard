@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZd-li-DSY">
-                                <rect key="frame" x="0.0" y="163" width="393" height="606"/>
+                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ve-Zz-SWD">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1101"/>
@@ -215,7 +215,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="udx-JP-KZp"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿99999.999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtp-Vi-W3E">
-                                <rect key="frame" x="39.999999999999986" y="103" width="176.66666666666663" height="36"/>
+                                <rect key="frame" x="39.999999999999986" y="59" width="176.66666666666663" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xbc-7m-2t8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4232.8000000000002" y="-532.01970443349751"/>
+            <point key="canvasLocation" x="8341" y="115"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e0j-f1-vAS">
@@ -260,10 +260,9 @@
                     </tabBar>
                     <connections>
                         <outlet property="bbTabBar" destination="6dS-he-CGL" id="eIR-rq-UCh"/>
-                        <segue destination="64f-Jx-R5e" kind="relationship" relationship="viewControllers" id="dQt-0F-KeH"/>
-                        <segue destination="EbD-rp-94S" kind="relationship" relationship="viewControllers" id="YSX-K0-2GH"/>
-                        <segue destination="K54-zg-cY9" kind="relationship" relationship="viewControllers" id="E4I-ft-puE"/>
-                        <segue destination="pha-IS-mxs" kind="relationship" relationship="viewControllers" id="0hT-ol-M3m"/>
+                        <segue destination="K54-zg-cY9" kind="relationship" relationship="viewControllers" id="83K-HA-0RA"/>
+                        <segue destination="EbD-rp-94S" kind="relationship" relationship="viewControllers" id="uez-T8-aOf"/>
+                        <segue destination="pha-IS-mxs" kind="relationship" relationship="viewControllers" id="aLf-nK-zvh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQb-Qo-k9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -723,7 +722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FtX-z2-cyR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4229.7709923664124" y="-1261.267605633803"/>
+            <point key="canvasLocation" x="4266" y="-627"/>
         </scene>
         <!--Edit Transaction View Controller-->
         <scene sceneID="vjJ-13-jNl">
@@ -889,26 +888,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTQ-4F-14B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5203.8167938931292" y="-1261.267605633803"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="Uyu-gs-JI9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="64f-Jx-R5e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="ebT-12-MJ2"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="byY-H7-hUc">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1Cm-9t-yTN" kind="relationship" relationship="rootViewController" id="tyL-OL-oqS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2XN-Vi-w2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3190" y="-532"/>
+            <point key="canvasLocation" x="5240" y="-627"/>
         </scene>
         <!--Add-->
         <scene sceneID="WzG-WQ-1JP">
@@ -1026,7 +1006,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laY-t0-yGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3189" y="-1261"/>
+            <point key="canvasLocation" x="3225" y="-627"/>
         </scene>
         <!--Account-->
         <scene sceneID="awv-cN-MTS">
@@ -1051,7 +1031,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="photo.badge.plus" catalog="system" width="128" height="97"/>
