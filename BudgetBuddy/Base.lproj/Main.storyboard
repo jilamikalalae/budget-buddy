@@ -412,6 +412,7 @@
                         <outlet property="categoryLabel" destination="NdH-Ym-bQ8" id="AnC-sN-YKD"/>
                         <outlet property="date" destination="tyz-LK-bzD" id="8Eh-RB-jNk"/>
                         <outlet property="dateLabel" destination="Dga-pr-vAz" id="FKK-MN-MZ1"/>
+                        <outlet property="datePicker" destination="tyz-LK-bzD" id="793-jX-oNp"/>
                         <outlet property="note" destination="rls-zU-V9A" id="2l6-ys-oIL"/>
                         <outlet property="noteLabel" destination="FyR-Zr-Smj" id="aoB-kh-xUB"/>
                         <outlet property="uploadButton" destination="EqB-GO-bdV" id="C6c-uh-3jL"/>
@@ -595,27 +596,13 @@
         <!--Transaction-->
         <scene sceneID="DbM-qO-4eT">
             <objects>
-                <viewController id="8hs-9b-ujl" customClass="TransactionViewController" customModule="BudgetBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransactionVC" id="8hs-9b-ujl" customClass="TransactionViewController" customModule="BudgetBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uFq-cz-b3M">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvi-Eo-j2q">
-                                <rect key="frame" x="16" y="151.66666666666666" width="357" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tb-wo-XNU">
-                                        <rect key="frame" x="0.0" y="0.0" width="52" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9x3-IU-iNN">
-                                        <rect key="frame" x="52" y="0.0" width="305" height="50"/>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="unm-Q5-rdK">
-                                <rect key="frame" x="0.0" y="209.66666666666669" width="393" height="559.33333333333326"/>
+                                <rect key="frame" x="0.0" y="145.66666666666669" width="393" height="623.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateCell" rowHeight="465" id="cxm-Ab-a8p" customClass="TransactionTableViewCell" customModule="BudgetBuddy" customModuleProvider="target">
@@ -663,8 +650,8 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1X-3L-ctJ">
-                                                                        <rect key="frame" x="315" y="20" width="58" height="21"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1X-3L-ctJ">
+                                                                        <rect key="frame" x="293" y="19" width="93" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -719,21 +706,17 @@
                         <viewLayoutGuide key="safeArea" id="d0L-S7-eCX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="unm-Q5-rdK" firstAttribute="top" secondItem="Mvi-Eo-j2q" secondAttribute="bottom" constant="8" id="0tA-Om-1td"/>
-                            <constraint firstAttribute="trailing" secondItem="Mvi-Eo-j2q" secondAttribute="trailing" constant="20" id="5Ez-ys-ze4"/>
                             <constraint firstItem="Zr9-1x-Qf9" firstAttribute="leading" secondItem="uFq-cz-b3M" secondAttribute="leadingMargin" id="6hr-gN-dFo"/>
                             <constraint firstItem="unm-Q5-rdK" firstAttribute="bottom" secondItem="d0L-S7-eCX" secondAttribute="bottom" id="CSh-i3-aHm"/>
                             <constraint firstItem="unm-Q5-rdK" firstAttribute="leading" secondItem="d0L-S7-eCX" secondAttribute="leading" id="CXM-hh-BGB"/>
-                            <constraint firstItem="Mvi-Eo-j2q" firstAttribute="leading" secondItem="uFq-cz-b3M" secondAttribute="leading" constant="16" id="HSP-UJ-q0M"/>
+                            <constraint firstItem="unm-Q5-rdK" firstAttribute="top" secondItem="Zr9-1x-Qf9" secondAttribute="bottom" constant="8" id="GtB-tL-D0K"/>
                             <constraint firstItem="unm-Q5-rdK" firstAttribute="trailing" secondItem="d0L-S7-eCX" secondAttribute="trailing" id="dFs-n6-1TM"/>
                             <constraint firstItem="Zr9-1x-Qf9" firstAttribute="top" secondItem="uFq-cz-b3M" secondAttribute="topMargin" id="i0A-Vs-JY5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zr9-1x-Qf9" secondAttribute="trailing" id="v9D-OY-S4f"/>
-                            <constraint firstItem="Mvi-Eo-j2q" firstAttribute="top" secondItem="Zr9-1x-Qf9" secondAttribute="bottom" constant="14" id="wlZ-tG-GDG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Transaction" id="zet-5k-QTZ"/>
                     <connections>
-                        <outlet property="dateLabel" destination="9tb-wo-XNU" id="hZS-rE-3rJ"/>
                         <outlet property="tableView" destination="unm-Q5-rdK" id="ROE-BE-cEy"/>
                         <outlet property="transactionNavigation" destination="zet-5k-QTZ" id="7ax-zA-UuO"/>
                     </connections>
@@ -1028,9 +1011,10 @@
         <!--Transaction-->
         <scene sceneID="hyS-dV-NdY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K54-zg-cY9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TransactionNVC" automaticallyAdjustsScrollViewInsets="NO" id="K54-zg-cY9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Transaction" image="list.bullet.clipboard.fill" catalog="system" id="Tlc-QC-MOt"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jgB-NS-BaE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8OY-dp-ij7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

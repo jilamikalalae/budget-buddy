@@ -33,6 +33,8 @@
 		765C66952CA0177100799327 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 765C66942CA0177100799327 /* GoogleSignInSwift */; };
 		765C66972CA0186C00799327 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 765C66962CA0186C00799327 /* GoogleService-Info.plist */; };
 		765C66992CA01C6200799327 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C66982CA01C6200799327 /* LoginViewController.swift */; };
+		765C669B2CA062D300799327 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C669A2CA062D300799327 /* DateExtension.swift */; };
+		765C669D2CA073E100799327 /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C669C2CA073E100799327 /* TransactionData.swift */; };
 		766F4C502C9C04B100418061 /* ReportChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4C4F2C9C04B100418061 /* ReportChartViewController.swift */; };
 		766F4C532C9C058500418061 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 766F4C522C9C058500418061 /* DGCharts */; };
 		769C6BAB2C883BD00065B19B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C6BAA2C883BD00065B19B /* AppDelegate.swift */; };
@@ -99,6 +101,8 @@
 		765B7F162C9F39F200388F05 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		765C66962CA0186C00799327 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		765C66982CA01C6200799327 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		765C669A2CA062D300799327 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		765C669C2CA073E100799327 /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
 		766F4C4F2C9C04B100418061 /* ReportChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportChartViewController.swift; sourceTree = "<group>"; };
 		769C6BA72C883BD00065B19B /* BudgetBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		769C6BAA2C883BD00065B19B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			children = (
 				76C08E342C88CFD900577147 /* UiButtonExtension.swift */,
 				760ED12C2C9DF945008B9458 /* StringExtension.swift */,
+				765C669A2CA062D300799327 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +218,14 @@
 			path = WidgetExtension;
 			sourceTree = "<group>";
 		};
+		765C669E2CA073F100799327 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				765C669C2CA073E100799327 /* TransactionData.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		769C6B9E2C883BD00065B19B = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +249,7 @@
 		769C6BA92C883BD00065B19B /* BudgetBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				765C669E2CA073F100799327 /* Network */,
 				765C66962CA0186C00799327 /* GoogleService-Info.plist */,
 				765B7EBB2C9F0F1D00388F05 /* BudgetBuddy.entitlements */,
 				763E828B2C9B2F60002CA5B4 /* Extensions */,
@@ -394,6 +408,7 @@
 				769C6BAB2C883BD00065B19B /* AppDelegate.swift in Sources */,
 				769C6BAD2C883BD00065B19B /* SceneDelegate.swift in Sources */,
 				763E82832C9B27DA002CA5B4 /* CategoryCollectionViewCell.swift in Sources */,
+				765C669D2CA073E100799327 /* TransactionData.swift in Sources */,
 				76A344642C99B72E00396766 /* TransactionDetailTableViewCell.swift in Sources */,
 				763E82812C9B175C002CA5B4 /* CategoryViewController+CollectionView.swift in Sources */,
 				76C08E352C88CFD900577147 /* UiButtonExtension.swift in Sources */,
@@ -402,6 +417,7 @@
 				76B9862A2C9EC72D0057D92F /* AccountViewController.swift in Sources */,
 				760ED12D2C9DF945008B9458 /* StringExtension.swift in Sources */,
 				76B9862C2C9EC8760057D92F /* ViewController.swift in Sources */,
+				765C669B2CA062D300799327 /* DateExtension.swift in Sources */,
 				766F4C502C9C04B100418061 /* ReportChartViewController.swift in Sources */,
 				765B7F172C9F39F200388F05 /* TabBarController.swift in Sources */,
 				76B9862E2C9EC9AB0057D92F /* EditTransactionViewController.swift in Sources */,
@@ -468,7 +484,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.WidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -498,7 +514,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.Widget;
+				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.WidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

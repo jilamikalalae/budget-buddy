@@ -16,4 +16,24 @@ struct Category {
 enum CategoryType {
     case income
     case expense
+    
+    var stringValue: String {
+            switch self {
+            case .income:
+                return "income"
+            case .expense:
+                return "expense"
+            }
+    }
+    
+    init?(from string: String) {
+        switch string.lowercased() {
+        case "income":
+            self = .income
+        case "expense":
+            self = .expense
+        default:
+            return nil
+        }
+    }
 }

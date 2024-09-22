@@ -47,7 +47,7 @@ extension TransactionTableViewCell: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TransactionDetailTableViewCell
         cell.category.text = transaction[i].category.localized()
-        cell.photo.image = UIImage(named: transaction[i].image)
+        cell.photo.image = UIImage(named: transaction[i].category)
         cell.amount.text = String(transaction[i].amount)
         
         

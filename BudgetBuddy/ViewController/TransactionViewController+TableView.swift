@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseDatabase
 
 class TransactionViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var transactionNavigation: UINavigationItem!
+    
+    var transactionData: [TransactionData] = []
     
     
     var transaction: [Transaction] = [
@@ -71,12 +75,58 @@ class TransactionViewController: UIViewController {
         tableView.reloadData()
         
         self.transactionNavigation.title = self.transactionNavigation.title!.localized()
-        self.dateLabel.text = self.dateLabel.text!.localized()
+        
+        fetchTransactions()
         
     }
     
 
-   
+    func fetchTransactions() {
+        let userId = Auth.auth().currentUser!.uid
+        let ref = Database.database().reference().child("users").child(userId) // Adjust the path as needed
+        ref.observe(.value) { snapshot  in
+            self.transactionData.removeAll()
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                   let dict = childSnapshot.value as? [String: Any],
+                   let transaction = TransactionData(dict: dict) {
+                    self.transactionData.append(transaction)
+                }
+            }
+            self.transaction = self.mapTransactions(transactionDataArray: self.transactionData)
+            print(self.transaction)
+            self.tableView.reloadData()
+            
+        } withCancel: { error in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func mapTransactions(transactionDataArray: [TransactionData]) -> [Transaction] {
+        // Grouping the transactions by date
+        var groupedTransactions = [String: [TransactionDetail]]()
+
+        for transactionData in transactionDataArray {
+            let detail = TransactionDetail(image: transactionData.imgUrl,
+                                           category: transactionData.category,
+                                           amount: Int(transactionData.amount))
+            if groupedTransactions[transactionData.date] != nil {
+                groupedTransactions[transactionData.date]?.append(detail)
+            } else {
+                groupedTransactions[transactionData.date] = [detail]
+            }
+        }
+        print(groupedTransactions)
+
+        // Mapping grouped transactions to Transaction
+        return groupedTransactions.map { (date, transactions) in
+            Transaction(date: date, transactions: transactions)
+        }.sorted { $0.date > $1.date }  
+    }
+    
+    
+
 
 }
 
@@ -96,7 +146,7 @@ extension TransactionViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell") as! TransactionTableViewCell
         cell.dateLabel.text = transaction[i].date
         cell.transaction = transaction[i].transactions
-        
+        cell.tableView.reloadData()
         
         return cell
     }

@@ -90,7 +90,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
             
         
             cell.category.text = expenseCategory[itemIndex].name.localized()
-            cell.photo.image = UIImage(named: expenseCategory[itemIndex].image)
+            cell.photo.image = UIImage(named: expenseCategory[itemIndex].name)
            
            
             
@@ -103,7 +103,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
             
         
             cell.category.text = incomeCategory[itemIndex].name.localized()
-            cell.photo.image = UIImage(named: incomeCategory[itemIndex].image)
+            cell.photo.image = UIImage(named: incomeCategory[itemIndex].name)
            
            
             
