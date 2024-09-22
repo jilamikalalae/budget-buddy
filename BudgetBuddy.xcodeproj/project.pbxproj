@@ -31,6 +31,8 @@
 		765C66902CA0170E00799327 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 765C668F2CA0170E00799327 /* FirebaseStorage */; };
 		765C66932CA0177100799327 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 765C66922CA0177100799327 /* GoogleSignIn */; };
 		765C66952CA0177100799327 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 765C66942CA0177100799327 /* GoogleSignInSwift */; };
+		765C66972CA0186C00799327 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 765C66962CA0186C00799327 /* GoogleService-Info.plist */; };
+		765C66992CA01C6200799327 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C66982CA01C6200799327 /* LoginViewController.swift */; };
 		766F4C502C9C04B100418061 /* ReportChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4C4F2C9C04B100418061 /* ReportChartViewController.swift */; };
 		766F4C532C9C058500418061 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 766F4C522C9C058500418061 /* DGCharts */; };
 		769C6BAB2C883BD00065B19B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C6BAA2C883BD00065B19B /* AppDelegate.swift */; };
@@ -95,6 +97,8 @@
 		765B7F0F2C9F178100388F05 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		765B7F112C9F189C00388F05 /* PrimaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryData.swift; sourceTree = "<group>"; };
 		765B7F162C9F39F200388F05 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		765C66962CA0186C00799327 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		765C66982CA01C6200799327 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		766F4C4F2C9C04B100418061 /* ReportChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportChartViewController.swift; sourceTree = "<group>"; };
 		769C6BA72C883BD00065B19B /* BudgetBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		769C6BAA2C883BD00065B19B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				76B9862B2C9EC8760057D92F /* ViewController.swift */,
 				76B9862D2C9EC9AB0057D92F /* EditTransactionViewController.swift */,
 				765B7F162C9F39F200388F05 /* TabBarController.swift */,
+				765C66982CA01C6200799327 /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 		769C6BA92C883BD00065B19B /* BudgetBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				765C66962CA0186C00799327 /* GoogleService-Info.plist */,
 				765B7EBB2C9F0F1D00388F05 /* BudgetBuddy.entitlements */,
 				763E828B2C9B2F60002CA5B4 /* Extensions */,
 				763E828A2C9B2EE6002CA5B4 /* View */,
@@ -354,6 +360,7 @@
 			files = (
 				769C6BB42C883BD30065B19B /* Assets.xcassets in Resources */,
 				760ED1302C9DFAB4008B9458 /* Localizable.strings in Resources */,
+				765C66972CA0186C00799327 /* GoogleService-Info.plist in Resources */,
 				769C6BB72C883BD30065B19B /* Base in Resources */,
 				769C6BB22C883BD00065B19B /* Base in Resources */,
 			);
@@ -378,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765C66992CA01C6200799327 /* LoginViewController.swift in Sources */,
 				76A3445A2C99A67600396766 /* Transaction.swift in Sources */,
 				76A344622C99B60F00396766 /* TransactionTableViewCell+TableView.swift in Sources */,
 				76A344602C99B5A700396766 /* TransactionViewController+TableView.swift in Sources */,
@@ -446,6 +454,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94YZC66W24;
@@ -459,8 +468,9 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.WidgetExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -474,6 +484,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94YZC66W24;
@@ -487,8 +498,9 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.WidgetExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = jilamika.BudgetBuddy.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

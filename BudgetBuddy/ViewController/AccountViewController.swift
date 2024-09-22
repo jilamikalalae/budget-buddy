@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
 
 class AccountViewController: UIViewController {
     
@@ -28,5 +31,22 @@ class AccountViewController: UIViewController {
     }
     
 
-
+    @IBAction func btnSignOut(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            GIDSignIn.sharedInstance.signOut()
+            print("Signed out")
+            navigateToLogin()
+        } catch let signoutError as NSError {
+            print("Error signing out %@", signoutError)
+        }
+    }
+    
+    func navigateToLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+        self.view.window?.rootViewController = loginVC
+        self.view.window?.makeKeyAndVisible()
+    }
+    
 }
