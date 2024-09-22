@@ -27,7 +27,6 @@
 		765B7F172C9F39F200388F05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B7F162C9F39F200388F05 /* TabBarController.swift */; };
 		765C668A2CA0170E00799327 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 765C66892CA0170E00799327 /* FirebaseAuth */; };
 		765C668C2CA0170E00799327 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 765C668B2CA0170E00799327 /* FirebaseDatabase */; };
-		765C668E2CA0170E00799327 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 765C668D2CA0170E00799327 /* FirebaseFirestore */; };
 		765C66902CA0170E00799327 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 765C668F2CA0170E00799327 /* FirebaseStorage */; };
 		765C66932CA0177100799327 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 765C66922CA0177100799327 /* GoogleSignIn */; };
 		765C66952CA0177100799327 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 765C66942CA0177100799327 /* GoogleSignInSwift */; };
@@ -35,8 +34,6 @@
 		765C66992CA01C6200799327 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C66982CA01C6200799327 /* LoginViewController.swift */; };
 		765C669B2CA062D300799327 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C669A2CA062D300799327 /* DateExtension.swift */; };
 		765C669D2CA073E100799327 /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765C669C2CA073E100799327 /* TransactionData.swift */; };
-		766F4C502C9C04B100418061 /* ReportChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F4C4F2C9C04B100418061 /* ReportChartViewController.swift */; };
-		766F4C532C9C058500418061 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 766F4C522C9C058500418061 /* DGCharts */; };
 		769C6BAB2C883BD00065B19B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C6BAA2C883BD00065B19B /* AppDelegate.swift */; };
 		769C6BAD2C883BD00065B19B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C6BAC2C883BD00065B19B /* SceneDelegate.swift */; };
 		769C6BB22C883BD00065B19B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 769C6BB12C883BD00065B19B /* Base */; };
@@ -103,7 +100,6 @@
 		765C66982CA01C6200799327 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		765C669A2CA062D300799327 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		765C669C2CA073E100799327 /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
-		766F4C4F2C9C04B100418061 /* ReportChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportChartViewController.swift; sourceTree = "<group>"; };
 		769C6BA72C883BD00065B19B /* BudgetBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		769C6BAA2C883BD00065B19B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		769C6BAC2C883BD00065B19B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,9 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765C668C2CA0170E00799327 /* FirebaseDatabase in Frameworks */,
-				765C668E2CA0170E00799327 /* FirebaseFirestore in Frameworks */,
 				765C66952CA0177100799327 /* GoogleSignInSwift in Frameworks */,
-				766F4C532C9C058500418061 /* DGCharts in Frameworks */,
 				765C66902CA0170E00799327 /* FirebaseStorage in Frameworks */,
 				765C668A2CA0170E00799327 /* FirebaseAuth in Frameworks */,
 				765C66932CA0177100799327 /* GoogleSignIn in Frameworks */,
@@ -165,7 +159,6 @@
 				76A3445F2C99B5A700396766 /* TransactionViewController+TableView.swift */,
 				763E82802C9B175B002CA5B4 /* CategoryViewController+CollectionView.swift */,
 				763E82872C9B2D5C002CA5B4 /* AddTransactionViewController.swift */,
-				766F4C4F2C9C04B100418061 /* ReportChartViewController.swift */,
 				76B986272C9EC51B0057D92F /* MapViewController.swift */,
 				76B986292C9EC72D0057D92F /* AccountViewController.swift */,
 				76B9862B2C9EC8760057D92F /* ViewController.swift */,
@@ -304,10 +297,8 @@
 			);
 			name = BudgetBuddy;
 			packageProductDependencies = (
-				766F4C522C9C058500418061 /* DGCharts */,
 				765C66892CA0170E00799327 /* FirebaseAuth */,
 				765C668B2CA0170E00799327 /* FirebaseDatabase */,
-				765C668D2CA0170E00799327 /* FirebaseFirestore */,
 				765C668F2CA0170E00799327 /* FirebaseStorage */,
 				765C66922CA0177100799327 /* GoogleSignIn */,
 				765C66942CA0177100799327 /* GoogleSignInSwift */,
@@ -418,7 +409,6 @@
 				760ED12D2C9DF945008B9458 /* StringExtension.swift in Sources */,
 				76B9862C2C9EC8760057D92F /* ViewController.swift in Sources */,
 				765C669B2CA062D300799327 /* DateExtension.swift in Sources */,
-				766F4C502C9C04B100418061 /* ReportChartViewController.swift in Sources */,
 				765B7F172C9F39F200388F05 /* TabBarController.swift in Sources */,
 				76B9862E2C9EC9AB0057D92F /* EditTransactionViewController.swift in Sources */,
 				76B986282C9EC51B0057D92F /* MapViewController.swift in Sources */,
@@ -779,11 +769,6 @@
 			package = 765C66882CA0170E00799327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		765C668D2CA0170E00799327 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 765C66882CA0170E00799327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
 		765C668F2CA0170E00799327 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 765C66882CA0170E00799327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -798,11 +783,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 765C66912CA0177100799327 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
-		};
-		766F4C522C9C058500418061 /* DGCharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 766F4C512C9C058500418061 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = DGCharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -28,6 +28,9 @@ class AccountViewController: UIViewController {
         self.signoutButton.setTitle("Sign out".localized(), for: .normal)
         self.deleteAccountButton.setTitle("Delete account".localized(), for: .normal)
         
+        let userEmail = Auth.auth().currentUser!.email!
+        self.userEmail.text = userEmail
+        
     }
     
 
