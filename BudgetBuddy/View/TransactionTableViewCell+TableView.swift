@@ -11,7 +11,7 @@ class TransactionTableViewCell: UITableViewCell {
     
     @IBOutlet var tableView: UITableView!
     
-    @IBOutlet weak var month: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var transaction: [TransactionDetail] = []
 
@@ -21,6 +21,7 @@ class TransactionTableViewCell: UITableViewCell {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,7 +46,7 @@ extension TransactionTableViewCell: UITableViewDelegate, UITableViewDataSource {
         let i = indexPath.row
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TransactionDetailTableViewCell
-        cell.category.text = transaction[i].category
+        cell.category.text = transaction[i].category.localized()
         cell.photo.image = UIImage(named: transaction[i].image)
         cell.amount.text = String(transaction[i].amount)
         

@@ -10,84 +10,54 @@ import UIKit
 class TransactionViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var transactionNavigation: UINavigationItem!
+    
     
     var transaction: [Transaction] = [
         Transaction(
-            date: "September 12, 2024",
+            date: "2024-09-24",
             transactions: [
-                TransactionDetail(image: "car", category: "parking fee", amount: 30),
-                TransactionDetail(image: "car", category: "parking fee", amount: 30),
-                TransactionDetail(image: "car", category: "parking fee", amount: 30)
+                TransactionDetail(image: "food", category: "Food", amount: 100),
+                TransactionDetail(image: "food", category: "Food", amount: 300),
+                TransactionDetail(image: "food", category: "Food", amount: 300)
             ]
         ),
         Transaction(
-            date: "September 13, 2024",
+            date: "2024-09-24",
             transactions: [
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30)
+                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
+                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
+                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
+                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
+                TransactionDetail(image: "drinks", category: "Beverage", amount: 30)
             ]
         ),
         Transaction(
-            date: "September 13, 2024",
+            date: "2024-09-24",
             transactions: [
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30)
+                TransactionDetail(image: "shopping", category: "Shopping", amount: 590),
+                TransactionDetail(image: "salary", category: "Salary", amount: 10000),
+                TransactionDetail(image: "education", category: "Education", amount: 360)
             ]
         ),
         Transaction(
-            date: "September 13, 2024",
+            date: "2024-09-24",
             transactions: [
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30)
+                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
+                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
+                TransactionDetail(image: "other", category: "Other Expense", amount: 30)
             ]
         ),
         Transaction(
-            date: "September 13, 2024",
+            date: "2024-09-24",
             transactions: [
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30),
-                TransactionDetail(image: "food", category: "parking fee", amount: 30)
+                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
+                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
+                TransactionDetail(image: "other", category: "Other Expense", amount: 30)
             ]
         ),
         
-        Transaction(
-            date: "September 14, 2024",
-            transactions: [
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30),
-                TransactionDetail(image: "drinks", category: "parking fee", amount: 30)
-            ]
-        )
     ]
 
 
@@ -99,6 +69,10 @@ class TransactionViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.reloadData()
+        
+        self.transactionNavigation.title = self.transactionNavigation.title!.localized()
+        self.dateLabel.text = self.dateLabel.text!.localized()
+        
     }
     
 
@@ -120,7 +94,7 @@ extension TransactionViewController: UITableViewDelegate, UITableViewDataSource 
         let i = indexPath.row
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell") as! TransactionTableViewCell
-        cell.month.text = transaction[i].date
+        cell.dateLabel.text = transaction[i].date
         cell.transaction = transaction[i].transactions
         
         

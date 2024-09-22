@@ -19,6 +19,10 @@ extension String {
         )
     }
     
+    
+    func ToFloat() -> Float {
+        return (self as NSString).floatValue
+    }
 }
 
 

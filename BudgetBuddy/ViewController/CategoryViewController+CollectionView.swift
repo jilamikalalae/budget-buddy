@@ -18,15 +18,18 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var categoryType: UILabel!
     
     var expenseCategory: [Category] = [
-        Category(image: "car", name: "parking fee", type: .expense),
-        Category(image: "drinks", name: "drink" , type: .expense),
-        Category(image: "car", name: "parking fee", type: .expense),
-        Category(image: "drinks", name: "drink" , type: .expense),
-        Category(image: "car", name: "parking fee", type: .expense),
-        Category(image: "drinks", name: "drink" , type: .expense),
-        Category(image: "car", name: "parking fee", type: .expense),
-        Category(image: "drinks", name: "drink" , type: .expense),
-        Category(image: "food", name: "food", type: CategoryType.expense)
+        Category(image: "food", name: "Food", type: .expense),
+        Category(image: "drinks", name: "Beverage" , type: .expense),
+        Category(image: "car", name: "Car", type: .expense),
+        Category(image: "transportion", name: "Public transportation" , type: .expense),
+        Category(image: "shopping", name: "Shopping", type: .expense),
+        Category(image: "bill", name: "Bills" , type: .expense),
+        Category(image: "family", name: "Family", type: .expense),
+        Category(image: "extertainment", name: "Entertainment" , type: .expense),
+        Category(image: "health", name: "Health & Fitness" , type: .expense),
+        Category(image: "pet", name: "Pet" , type: .expense),
+        Category(image: "education", name: "Education" , type: .expense),
+        Category(image: "other", name: "Other Expense", type: CategoryType.expense)
     ]
     
     var incomeCategory: [Category] = [
@@ -41,6 +44,11 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var expenseCollectionView: UICollectionView!
     @IBOutlet weak var incomeCollectionView: UICollectionView!
     
+    
+    @IBOutlet weak var expenseLabel: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -50,6 +58,9 @@ class CategoryViewController: UIViewController {
         
         expenseCollectionView.dataSource = self
         incomeCollectionView.dataSource = self
+        
+        self.expenseLabel.text = self.expenseLabel.text!.localized()
+        self.incomeLabel.text = self.incomeLabel.text!.localized()
         
     }
     
@@ -78,7 +89,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
                                                           for: indexPath) as! CategoryCollectionViewCell
             
         
-            cell.category.text = expenseCategory[itemIndex].name
+            cell.category.text = expenseCategory[itemIndex].name.localized()
             cell.photo.image = UIImage(named: expenseCategory[itemIndex].image)
            
            
@@ -91,7 +102,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
                                                           for: indexPath) as! CategoryCollectionViewCell
             
         
-            cell.category.text = incomeCategory[itemIndex].name
+            cell.category.text = incomeCategory[itemIndex].name.localized()
             cell.photo.image = UIImage(named: incomeCategory[itemIndex].image)
            
            

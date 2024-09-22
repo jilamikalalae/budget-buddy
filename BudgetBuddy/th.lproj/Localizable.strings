@@ -1,3 +1,60 @@
-"Add" = "เพิ่ม";
+//Add Transaction Page
+"Add Transaction" = "เพิ่มรายการ";
 "Amount" = "จำนวนเงิน";
 "Enter amount" = "กรอกจำนวนเงิน";
+"Category" = "หมวดหมู่";
+"Select category" = "เลือกหมวดหมู่";
+"Location" = "สถานที่";
+"Set location" = " ตั้งสถานที่";
+"Note" = "บันทึก";
+"Enter note" = "เพิ่มบันทึก";
+"Date" = "วันที่";
+"Add" = "เพิ่ม";
+
+
+//Category Page
+"Expense" = "รายจ่าย";
+"Income" = "รายรับ";
+//Expense
+"Food" = "อาหาร";
+"Beverage" = "เครื่องดื่ม";
+"Car" = "รถยนต์";
+"Public transportation" = "การขนส่งสาธารณะ";
+"Shopping" = "ช้อปปิ้ง";
+"Bills" = "บิลค่าใช้จ่าย";
+"Family" = "ครอบครัว";
+"Entertainment" = "ความบันเทิง";
+"Health & Fitness" = "สุขภาพและฟิตเนส";
+"Pet" = "สัตว์เลี้ยง";
+"Education" = "การศึกษา";
+"Other Expense" = "ค่าใช้จ่ายอื่นๆ";
+//Income
+"Salary" = "เงินเดือน";
+"Other income" = "รายรับอื่นๆ";
+"Incoming transfer" = "การโอนเงินเข้า";
+"Uncategorized Income" = "รายได้ไม่ระบุหมวดหมู่";
+"Allowance" = "เบี้ยเลี้ยง";
+
+
+//Transaction Page
+"Transaction" = "รายการ";
+"Select Date" = "เลือกวันที่";
+
+//Map page
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+
+//Account
+"Account" = "บัญชี";
+"Sign out" = "ออกจากระบบ";
+"Delete account" = "ลบบัญชี";
+
+//Edit Page
+"Save" = "บันทึก";
+"Delete" = "ลบ";
+"Upload" = "อัพโหลด";
+"" = "";
+
+"Home" = "หน้าหลัก";
