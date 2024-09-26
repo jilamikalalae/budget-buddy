@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseDatabase
 
-class TransactionViewController: UIViewController {
+class TransactionViewController: UIViewController, TransactionTableViewCellDelegate {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var transactionNavigation: UINavigationItem!
@@ -46,6 +46,14 @@ class TransactionViewController: UIViewController {
         
     }
     
+    func didSelectTransaction(_ transaction: TransactionDetail) {
+        print("HELLO")
+        if let editTransactionVC = storyboard?.instantiateViewController(withIdentifier: "EditTransactionVC") as? EditTransactionViewController {
+            editTransactionVC.transaction = transaction
+            self.navigationController?.pushViewController(editTransactionVC, animated: true)
+        }
+    }
+    
 
     func fetchTransactions() {
         let userId = Auth.auth().currentUser!.uid
@@ -61,6 +69,13 @@ class TransactionViewController: UIViewController {
             }
             self.transaction = self.mapTransactions(transactionDataArray: self.transactionData)
             print(self.transaction)
+            
+            var totalBalance = self.calculateBalance()
+            
+            self.balance.text = String(totalBalance)
+            self.storeBalance(balance: totalBalance)
+            
+            
             self.tableView.reloadData()
             
         } withCancel: { error in
@@ -69,15 +84,38 @@ class TransactionViewController: UIViewController {
         
     }
     
+    func calculateBalance() -> Float {
+        var balance:Float = 0.0
+        for v in transactionData {
+            if v.type == .income {
+                balance = balance + v.amount
+            } else {
+                balance = balance - v.amount
+            }
+        }
+        return balance
+    }
+    
+    func storeBalance(balance: Float){
+        let storeBalance = Balance(balance: balance)
+        let primaryData = PrimaryData(balanceData: storeBalance)
+        primaryData.encodeData()
+    }
+    
     func mapTransactions(transactionDataArray: [TransactionData]) -> [Transaction] {
         // Grouping the transactions by date
         var groupedTransactions = [String: [TransactionDetail]]()
 
         for transactionData in transactionDataArray {
-            let detail = TransactionDetail(image: transactionData.imgUrl,
+            let detail = TransactionDetail(id: transactionData.id,
+                                           image: transactionData.imgUrl,
                                            category: transactionData.category,
                                            amount: Int(transactionData.amount),
-                                           categoryIcon: transactionData.categoryIcon)
+                                           categoryIcon: transactionData.categoryIcon,
+                                           date: transactionData.date,
+                                           note: transactionData.note,
+                                           type: transactionData.type
+            )
             if groupedTransactions[transactionData.date] != nil {
                 groupedTransactions[transactionData.date]?.append(detail)
             } else {
@@ -113,14 +151,15 @@ extension TransactionViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell") as! TransactionTableViewCell
         cell.dateLabel.text = transaction[i].date
         cell.transaction = transaction[i].transactions
+        cell.delegate = self  
         cell.tableView.reloadData()
         
-       
+        
         
         
         return cell
     }
     
-
     
 }
+

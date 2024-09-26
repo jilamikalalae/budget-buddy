@@ -502,7 +502,6 @@
                                                                 <outlet property="amount" destination="d1X-3L-ctJ" id="0ba-T4-umb"/>
                                                                 <outlet property="category" destination="KOs-4b-pvt" id="MqU-07-Gux"/>
                                                                 <outlet property="photo" destination="QZO-Qs-Pe3" id="20W-vF-d0a"/>
-                                                                <segue destination="8ZI-y5-USp" kind="show" id="edk-Vy-lY7"/>
                                                             </connections>
                                                         </tableViewCell>
                                                     </prototypes>
@@ -568,13 +567,13 @@
         <!--Edit Transaction View Controller-->
         <scene sceneID="vjJ-13-jNl">
             <objects>
-                <viewController id="8ZI-y5-USp" customClass="EditTransactionViewController" customModule="BudgetBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditTransactionVC" id="8ZI-y5-USp" customClass="EditTransactionViewController" customModule="BudgetBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ZI-Gx-e2b">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-Ey-qog">
-                                <rect key="frame" x="30" y="706" width="333" height="38"/>
+                                <rect key="frame" x="30" y="755" width="333" height="38"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -586,9 +585,12 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnDelete:" destination="8ZI-y5-USp" eventType="touchUpInside" id="cE9-YO-dVH"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="33d-Ob-dCo">
-                                <rect key="frame" x="40" y="110.99999999999997" width="313" height="303.33333333333326"/>
+                                <rect key="frame" x="40" y="67" width="313" height="303.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcb-cD-mBZ">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="20.333333333333332"/>
@@ -597,7 +599,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="700" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nru-3a-evo">
-                                        <rect key="frame" x="0.0" y="30.333333333333343" width="313" height="30.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="30.333333333333329" width="313" height="30.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
@@ -627,7 +629,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FzY-dO-v5D">
-                                        <rect key="frame" x="0.0" y="182.33333333333331" width="313" height="30.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="182.33333333333334" width="313" height="30.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -680,7 +682,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prg-qf-S50">
-                                <rect key="frame" x="30" y="428.33333333333331" width="333" height="217.66666666666669"/>
+                                <rect key="frame" x="30" y="384.33333333333326" width="333" height="310.66666666666674"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zmD-Px-HB3"/>
@@ -708,6 +710,7 @@
                         <outlet property="deleteButton" destination="fhe-Ey-qog" id="SSu-4k-ofu"/>
                         <outlet property="noteLabel" destination="rk7-fM-qXS" id="qZB-Rt-Jcq"/>
                         <outlet property="noteTextField" destination="FzY-dO-v5D" id="EIh-bB-FDe"/>
+                        <outlet property="showDate" destination="osD-fV-0yf" id="L08-qe-6JR"/>
                         <outlet property="uploadButton" destination="9hN-3J-2Uj" id="vCl-aG-BUu"/>
                         <outlet property="uploadImage" destination="prg-qf-S50" id="08C-fL-5AS"/>
                     </connections>
@@ -869,13 +872,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

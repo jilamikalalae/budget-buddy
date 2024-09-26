@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseDatabase
+
 
 class EditTransactionViewController: UIViewController {
     
@@ -20,6 +24,7 @@ class EditTransactionViewController: UIViewController {
     @IBOutlet weak var noteTextField: UITextField!
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var showDate: UILabel!
     
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var uploadImage: UIImageView!
@@ -27,19 +32,26 @@ class EditTransactionViewController: UIViewController {
     
     @IBOutlet weak var deleteButton: UIButton!
     
+    var transaction: TransactionDetail = TransactionDetail(id: "",image: "", category: "Enter Category", amount: 0, categoryIcon: "", date: "", note: "", type: .income)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.amountLabel.text = self.amountLabel.text!.localized()
         self.amountTextFeild.placeholder = self.amountTextFeild.placeholder!.localized()
+        amountTextFeild.text = String(transaction.amount)
         
         self.categoryLabel.text = self.categoryLabel.text!.localized()
         self.categoryButton.setTitle("Select category".localized(), for: .normal)
+        categoryButton.setTitle(transaction.category, for: .normal)
+        categoryButton.setTitleColor(.black, for: .normal)
         
         self.noteLabel.text = self.noteLabel.text!.localized()
         self.noteTextField.placeholder = self.noteTextField.placeholder!.localized()
+        noteTextField.text = transaction.note
         
         self.dateLabel.text = self.dateLabel.text!.localized()
+        showDate.text = transaction.date
         
         self.uploadButton.setTitle("Upload".localized(), for: .normal)
         
@@ -71,6 +83,21 @@ class EditTransactionViewController: UIViewController {
         
         
         
+    }
+    
+    
+    @IBAction func btnDelete(_ sender: Any) {
+        let userId = Auth.auth().currentUser!.uid
+        Database.database().reference().child("users").child(userId).child(transaction.id).removeValue()
+        
+        showHomeScreen()
+    }
+    
+    func showHomeScreen(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarC") as! TabBarController
+        self.view.window?.rootViewController = tabBarController
+        self.view.window?.makeKeyAndVisible()
     }
     
     @IBAction func openCategoryPicker(_ sender: UIButton) {

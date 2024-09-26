@@ -8,6 +8,7 @@
 import Foundation
 
 struct TransactionData {
+    let id: String
     let amount: Float
     let category: String
     let categoryIcon: String
@@ -18,7 +19,8 @@ struct TransactionData {
 
     // Custom initializer
     init?(dict: [String: Any]) {
-        guard let amount = dict["amount"] as? NSNumber,
+        guard let id = dict["id"] as? String,
+              let amount = dict["amount"] as? NSNumber,
               let category = dict["category"] as? String,
               let categoryIcon = dict["categoryIcon"] as? String,
               let type = dict["type"] as? String,
@@ -28,6 +30,7 @@ struct TransactionData {
             return nil
         }
         
+        self.id = id
         self.amount = Float(truncating: amount)
         self.category = category
         self.categoryIcon = categoryIcon

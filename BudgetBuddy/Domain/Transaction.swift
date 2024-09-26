@@ -14,14 +14,18 @@ import Foundation
 //    }
 //}
 
-struct TransactionDetail: Codable {
+struct TransactionDetail{
+    let id: String
     let image: String
     let category: String
     let amount: Int
     let categoryIcon: String
+    let date: String
+    let note: String
+    let type: CategoryType
 }
 
-struct Transaction: Codable {
+struct Transaction{
     let date: String
     let transactions: [TransactionDetail]
 }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TransactionTableViewCellDelegate: AnyObject {
+    func didSelectTransaction(_ transaction: TransactionDetail)
+}
+
 class TransactionTableViewCell: UITableViewCell {
     
     @IBOutlet var tableView: UITableView!
@@ -14,6 +18,10 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     var transaction: [TransactionDetail] = []
+    
+    
+    var delegate: TransactionTableViewCellDelegate?
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +35,7 @@ class TransactionTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+//        super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
@@ -35,6 +43,7 @@ class TransactionTableViewCell: UITableViewCell {
 }
 
 extension TransactionTableViewCell: UITableViewDelegate, UITableViewDataSource {
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transaction.count
@@ -51,19 +60,34 @@ extension TransactionTableViewCell: UITableViewDelegate, UITableViewDataSource {
         cell.category.text = transaction[i].category.localized()
         cell.photo.image = UIImage(named: transaction[i].categoryIcon)
         cell.amount.text = String(transaction[i].amount)
-        
-        // Check if the category type is income or expense
-        if transaction[i].category.type == .income {
-            cell.amount.textColor = UIColor.green // Green for income
-        } else {
-            cell.amount.textColor = UIColor.red   // Red for expense
-        }
-        
+        cell.categoryType = transaction[i].type
+        cell.configureCell(with: transaction[i].type) 
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let transaction = transaction[indexPath.row]
+        delegate?.didSelectTransaction(transaction)
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            let transaction = transaction[indexPath.row]
+//
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            if let editTransactionVC = storyboard.instantiateViewController(withIdentifier: "EditTransactionVC") as? EditTransactionViewController {
+//                editTransactionVC.transaction = transaction
+//                
+//                self.navigationController?.pushViewController(editTransactionVC, animated: true)
+//            } else {
+//                print("Error: Unable to instantiate view controller with identifier 'EditTransactionVC'")
+//            }
+//        }
+//    
 
     
 }
+
+
+
 

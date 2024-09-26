@@ -37,6 +37,7 @@ class AddTransactionViewController: UIViewController  {
     @IBOutlet weak var amountError: UILabel!
     @IBOutlet weak var categoryError: UILabel!
     
+    var categoryName: String = ""
     var categoryType: CategoryType = .income
     var categoryIcon: String = ""
     
@@ -150,13 +151,14 @@ class AddTransactionViewController: UIViewController  {
             return
         }
         
-        storeBalance(balance: (amount.text!.ToFloat()))
         
         let amountNSNumber = NSNumber(value: amount.text!.ToFloat())
+        let transactionId = UUID().uuidString
         
         let transaction: [String: Any] = [
+            "id": transactionId,
             "amount": amountNSNumber as NSObject,
-            "category": category.titleLabel!.text!,
+            "category": categoryName,
             "categoryIcon": categoryIcon,
             "type": categoryType.stringValue,
             "note": note.text!,
@@ -164,7 +166,7 @@ class AddTransactionViewController: UIViewController  {
             "imgUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos%2Fpic&psig=AOvVaw3IxhsedtYFoOfboKSqMeoA&ust=1727106064934000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNiku83x1ogDFQAAAAAdAAAAABAE"
             
         ]
-        let transactionId = UUID().uuidString
+       
         let userId = Auth.auth().currentUser!.uid
         database.child("users").child(userId).child(transactionId).setValue(transaction)
         
@@ -172,11 +174,7 @@ class AddTransactionViewController: UIViewController  {
         
     }
     
-    func storeBalance(balance: Float){
-        let storeBalance = Balance(balance: balance)
-        let primaryData = PrimaryData(balanceData: storeBalance)
-        primaryData.encodeData()
-    }
+    
     
     func navigateToTransaction() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -234,8 +232,11 @@ extension AddTransactionViewController: CategoryViewDelegate {
     func categorySelected(_ category: Category) {
         self.category.setTitle(category.name.localized(), for: .normal)
         self.category.setTitleColor(UIColor.black, for: .normal)
+        
+        self.categoryName = category.name
         self.categoryType = category.type
         self.categoryIcon = category.image
+        
     }
 }
 
