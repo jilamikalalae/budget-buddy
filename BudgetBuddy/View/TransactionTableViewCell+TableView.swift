@@ -52,6 +52,13 @@ extension TransactionTableViewCell: UITableViewDelegate, UITableViewDataSource {
         cell.photo.image = UIImage(named: transaction[i].categoryIcon)
         cell.amount.text = String(transaction[i].amount)
         
+        // Check if the category type is income or expense
+        if transaction[i].category.type == .income {
+            cell.amount.textColor = UIColor.green // Green for income
+        } else {
+            cell.amount.textColor = UIColor.red   // Red for expense
+        }
+        
         
         return cell
     }
