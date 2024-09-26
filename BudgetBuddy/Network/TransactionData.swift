@@ -10,6 +10,7 @@ import Foundation
 struct TransactionData {
     let amount: Float
     let category: String
+    let categoryIcon: String
     let type: CategoryType
     let note: String
     let date: String
@@ -19,6 +20,7 @@ struct TransactionData {
     init?(dict: [String: Any]) {
         guard let amount = dict["amount"] as? NSNumber,
               let category = dict["category"] as? String,
+              let categoryIcon = dict["categoryIcon"] as? String,
               let type = dict["type"] as? String,
               let note = dict["note"] as? String,
               let date = dict["date"] as? String,
@@ -28,6 +30,7 @@ struct TransactionData {
         
         self.amount = Float(truncating: amount)
         self.category = category
+        self.categoryIcon = categoryIcon
         self.type = CategoryType(from: type) ?? .income
         self.note = note
         self.date = date

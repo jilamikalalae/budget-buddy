@@ -32,5 +32,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>This app for authentication</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>LINESeedSansTH_A_Rg.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -18,6 +18,7 @@ struct TransactionDetail: Codable {
     let image: String
     let category: String
     let amount: Int
+    let categoryIcon: String
 }
 
 struct Transaction: Codable {

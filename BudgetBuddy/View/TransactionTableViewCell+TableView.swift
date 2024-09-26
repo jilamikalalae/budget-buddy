@@ -22,6 +22,8 @@ class TransactionTableViewCell: UITableViewCell {
         tableView.delegate = self
         tableView.dataSource = self
         
+        dateLabel.font = UIFont(name: CustomFont().font, size: dateLabel.font.pointSize)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,7 +49,7 @@ extension TransactionTableViewCell: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TransactionDetailTableViewCell
         cell.category.text = transaction[i].category.localized()
-        cell.photo.image = UIImage(named: transaction[i].category)
+        cell.photo.image = UIImage(named: transaction[i].categoryIcon)
         cell.amount.text = String(transaction[i].amount)
         
         

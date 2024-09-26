@@ -22,10 +22,27 @@ class LoginViewController: UIViewController {
             fatalError("Missing clientID in GoogleService-Info.plist")
         }
         GIDSignIn.sharedInstance.configuration = GIDConfiguration(clientID: clientID)
+        self.signInButton.setTitle("Sign in With Google".localized(), for: .normal)
+        
+        
+        signInButton.titleLabel?.font = UIFont(name: CustomFont().font, size: signInButton.titleLabel?.font.pointSize ?? 24)
         
         
         
-       
+        for family: String in UIFont.familyNames
+                {
+                     print("\(family)")
+                     for names: String in   UIFont.fontNames(forFamilyName: family)
+                  {
+                      print("== \(names)")
+
+                  }
+                }
+                
+            UILabel.appearance().font = UIFont(name: "Inter", size: 18)
+            UIButton.appearance().titleLabel?.font = UIFont(name: "Inter", size: 16)
+            UITextField.appearance().font = UIFont(name: "Inter", size: 18)
+   
     }
     
     override func viewDidAppear(_ animated: Bool) {

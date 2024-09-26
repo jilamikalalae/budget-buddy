@@ -33,7 +33,12 @@ class AddTransactionViewController: UIViewController  {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    
+    @IBOutlet weak var amountError: UILabel!
+    @IBOutlet weak var categoryError: UILabel!
+    
     var categoryType: CategoryType = .income
+    var categoryIcon: String = ""
     
     
     override func viewDidLoad() {
@@ -58,11 +63,71 @@ class AddTransactionViewController: UIViewController  {
         
         self.addButton.setTitle("Add".localized(), for: .normal)
         
-        
+
         datePicker.calendar = Calendar(identifier: .gregorian)
+        
+        
+       
+        
+        
+        
+        
+        // Custom fonts
+        amountLabel.font = UIFont(name: CustomFont().font, size: amountLabel.font.pointSize)
+        amount.font = UIFont(name: CustomFont().font, size: amount.font?.pointSize ?? 24)
+        
+        categoryLabel.font = UIFont(name: CustomFont().font, size: categoryLabel.font.pointSize)
+        category.titleLabel?.font = UIFont(name: CustomFont().font, size: category.titleLabel?.font.pointSize ?? 24)
+           
+        noteLabel.font = UIFont(name: CustomFont().font, size: noteLabel.font?.pointSize ?? 17)
+        note.font = UIFont(name: CustomFont().font, size: note.font?.pointSize ?? 24)
+        
+        dateLabel.font = UIFont(name: CustomFont().font, size: dateLabel.font?.pointSize ?? 17)
+        
+        uploadButton.titleLabel?.font = UIFont(name: CustomFont().font, size: uploadButton.titleLabel?.font.pointSize ?? 17)
+        
+        addButton.titleLabel?.font = UIFont(name: CustomFont().font, size: addButton.titleLabel?.font.pointSize ?? 17)
+        
+       
+
     }
     
     
+    @IBAction func amountChanged(_ sender: Any) {
+        var amountText = self.amount.text!
+        // Remove leading zero if it exists
+        if amountText.first == "0", amountText.count > 1, amountText[amountText.index(after: amountText.startIndex)] != "." {
+            amountText.removeFirst()
+        }
+        
+        if amountText.first == "." {
+            amountText = "0" + amountText
+        }
+        
+        // Allow only digits and one decimal point
+        let allowedCharacters = NSCharacterSet(charactersIn: "0123456789.").inverted
+        let components = amountText.components(separatedBy: allowedCharacters)
+        amountText = components.joined(separator: "")
+        
+        // Ensure only one decimal point and restrict to two decimal places
+        if let dotIndex = amountText.firstIndex(of: ".") {
+            let decimalPart = amountText[amountText.index(after: dotIndex)...]
+            
+            // Trim the decimal part to only two characters
+            if decimalPart.count > 2 {
+                amountText = String(amountText.prefix(upTo: amountText.index(dotIndex, offsetBy: 3)))
+            }
+            
+            // Remove any additional decimal points if present
+            let parts = amountText.split(separator: ".", omittingEmptySubsequences: false)
+            if parts.count > 2 {
+                amountText = parts[0] + "." + parts[1]
+            }
+        }
+        
+        // Update the text field
+        self.amount.text = amountText
+    }
     
     @IBAction func openCategoryPicker(_ sender: UIButton) {
            let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -75,6 +140,16 @@ class AddTransactionViewController: UIViewController  {
     
     
     @IBAction func btnAddTransaction(_ sender: Any) {
+        if !validateText() {
+            return
+        }
+        
+        var isCheck = validateText()
+        
+        if !isCheck { // isCheck != true
+            return
+        }
+        
         storeBalance(balance: (amount.text!.ToFloat()))
         
         let amountNSNumber = NSNumber(value: amount.text!.ToFloat())
@@ -82,6 +157,7 @@ class AddTransactionViewController: UIViewController  {
         let transaction: [String: Any] = [
             "amount": amountNSNumber as NSObject,
             "category": category.titleLabel!.text!,
+            "categoryIcon": categoryIcon,
             "type": categoryType.stringValue,
             "note": note.text!,
             "date": date.date.ToString(),
@@ -93,6 +169,7 @@ class AddTransactionViewController: UIViewController  {
         database.child("users").child(userId).child(transactionId).setValue(transaction)
         
         navigateToTransaction()
+        
     }
     
     func storeBalance(balance: Float){
@@ -109,6 +186,24 @@ class AddTransactionViewController: UIViewController  {
         self.view.window?.makeKeyAndVisible()
     }
 
+    func validateText() -> Bool {
+        var isCheck = true
+        amountError.isHidden = true
+        categoryError.isHidden = true
+        if amount.text == nil || amount.text!.isEmpty {
+            amountError.isHidden = false
+            amountError.text = "Amount is required".localized()
+            isCheck = false
+        }
+        
+        if category.titleLabel!.text! == "Select category".localized(){
+            categoryError.isHidden = false
+            categoryError.text = "Category is required".localized()
+            isCheck = false
+        }
+        
+        return isCheck
+    }
         
 }
 
@@ -140,7 +235,7 @@ extension AddTransactionViewController: CategoryViewDelegate {
         self.category.setTitle(category.name.localized(), for: .normal)
         self.category.setTitleColor(UIColor.black, for: .normal)
         self.categoryType = category.type
-        
+        self.categoryIcon = category.image
     }
 }
 

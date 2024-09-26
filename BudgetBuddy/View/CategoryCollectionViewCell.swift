@@ -13,4 +13,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var category: UILabel!
     
     
+    override func awakeFromNib() {
+            super.awakeFromNib()
+            
+            // Set custom font for the category label
+            category.font = UIFont(name: CustomFont().font, size: category.font.pointSize)
+        }
 }

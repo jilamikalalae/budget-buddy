@@ -14,10 +14,15 @@ class TransactionDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var photo: UIImageView!
     
+    
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        amount.font = UIFont(name: CustomFont().font, size: amount.font.pointSize)
+        category.font = UIFont(name: CustomFont().font, size: category.font.pointSize)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

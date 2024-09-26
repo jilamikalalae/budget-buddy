@@ -15,54 +15,14 @@ class TransactionViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var transactionNavigation: UINavigationItem!
     
+    @IBOutlet weak var balance: UILabel!
+    
+    
+    
     var transactionData: [TransactionData] = []
     
     
-    var transaction: [Transaction] = [
-        Transaction(
-            date: "2024-09-24",
-            transactions: [
-                TransactionDetail(image: "food", category: "Food", amount: 100),
-                TransactionDetail(image: "food", category: "Food", amount: 300),
-                TransactionDetail(image: "food", category: "Food", amount: 300)
-            ]
-        ),
-        Transaction(
-            date: "2024-09-24",
-            transactions: [
-                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
-                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
-                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
-                TransactionDetail(image: "drinks", category: "Beverage", amount: 30),
-                TransactionDetail(image: "drinks", category: "Beverage", amount: 30)
-            ]
-        ),
-        Transaction(
-            date: "2024-09-24",
-            transactions: [
-                TransactionDetail(image: "shopping", category: "Shopping", amount: 590),
-                TransactionDetail(image: "salary", category: "Salary", amount: 10000),
-                TransactionDetail(image: "education", category: "Education", amount: 360)
-            ]
-        ),
-        Transaction(
-            date: "2024-09-24",
-            transactions: [
-                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
-                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
-                TransactionDetail(image: "other", category: "Other Expense", amount: 30)
-            ]
-        ),
-        Transaction(
-            date: "2024-09-24",
-            transactions: [
-                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
-                TransactionDetail(image: "other", category: "Other Expense", amount: 30),
-                TransactionDetail(image: "other", category: "Other Expense", amount: 30)
-            ]
-        ),
-        
-    ]
+    var transaction: [Transaction] = []
 
 
 
@@ -77,6 +37,12 @@ class TransactionViewController: UIViewController {
         self.transactionNavigation.title = self.transactionNavigation.title!.localized()
         
         fetchTransactions()
+        
+        
+        
+        
+        balance.font = UIFont(name: CustomFont().font, size: balance.font.pointSize)
+       
         
     }
     
@@ -110,7 +76,8 @@ class TransactionViewController: UIViewController {
         for transactionData in transactionDataArray {
             let detail = TransactionDetail(image: transactionData.imgUrl,
                                            category: transactionData.category,
-                                           amount: Int(transactionData.amount))
+                                           amount: Int(transactionData.amount),
+                                           categoryIcon: transactionData.categoryIcon)
             if groupedTransactions[transactionData.date] != nil {
                 groupedTransactions[transactionData.date]?.append(detail)
             } else {
@@ -147,6 +114,8 @@ extension TransactionViewController: UITableViewDelegate, UITableViewDataSource 
         cell.dateLabel.text = transaction[i].date
         cell.transaction = transaction[i].transactions
         cell.tableView.reloadData()
+        
+        
         
         return cell
     }

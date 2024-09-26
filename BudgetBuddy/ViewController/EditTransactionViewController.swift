@@ -24,7 +24,7 @@ class EditTransactionViewController: UIViewController {
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var uploadImage: UIImageView!
     
-    @IBOutlet weak var saveButton: UIButton!
+    
     @IBOutlet weak var deleteButton: UIButton!
     
     override func viewDidLoad() {
@@ -43,8 +43,34 @@ class EditTransactionViewController: UIViewController {
         
         self.uploadButton.setTitle("Upload".localized(), for: .normal)
         
-        self.saveButton.setTitle("Save".localized(), for: .normal)
+        
         self.deleteButton.setTitle("Delete".localized(), for: .normal)
+        
+        
+        amountTextFeild.isUserInteractionEnabled = false
+        categoryButton.isEnabled = false
+        noteTextField.isUserInteractionEnabled = false
+        
+        // Custom fonts
+        amountLabel.font = UIFont(name: CustomFont().font, size: amountLabel.font.pointSize)
+        amountTextFeild.font = UIFont(name: CustomFont().font, size: amountTextFeild.font?.pointSize ?? 24)
+        
+        categoryLabel.font = UIFont(name: CustomFont().font, size: categoryLabel.font.pointSize)
+        categoryButton.titleLabel?.font = UIFont(name: CustomFont().font, size: categoryButton.titleLabel?.font.pointSize ?? 24)
+        
+        noteLabel.font = UIFont(name: CustomFont().font, size: noteLabel.font?.pointSize ?? 17)
+        noteTextField.font = UIFont(name: CustomFont().font, size: noteTextField.font?.pointSize ?? 24)
+        
+        dateLabel.font = UIFont(name: CustomFont().font, size: dateLabel.font?.pointSize ?? 17)
+        
+        uploadButton.titleLabel?.font = UIFont(name: CustomFont().font, size: uploadButton.titleLabel?.font.pointSize ?? 17)
+        
+       
+        deleteButton.titleLabel?.font = UIFont(name: CustomFont().font, size: deleteButton.titleLabel?.font.pointSize ?? 17)
+        
+        
+        
+        
     }
     
     @IBAction func openCategoryPicker(_ sender: UIButton) {

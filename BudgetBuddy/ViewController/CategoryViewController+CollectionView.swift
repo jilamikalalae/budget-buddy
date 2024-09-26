@@ -18,26 +18,26 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var categoryType: UILabel!
     
     var expenseCategory: [Category] = [
-        Category(image: "food", name: "Food", type: .expense),
-        Category(image: "drinks", name: "Beverage" , type: .expense),
-        Category(image: "car", name: "Car", type: .expense),
-        Category(image: "transportion", name: "Public transportation" , type: .expense),
-        Category(image: "shopping", name: "Shopping", type: .expense),
-        Category(image: "bill", name: "Bills" , type: .expense),
-        Category(image: "family", name: "Family", type: .expense),
-        Category(image: "extertainment", name: "Entertainment" , type: .expense),
-        Category(image: "health", name: "Health & Fitness" , type: .expense),
-        Category(image: "pet", name: "Pet" , type: .expense),
-        Category(image: "education", name: "Education" , type: .expense),
-        Category(image: "other", name: "Other Expense", type: CategoryType.expense)
+        Category(image: "Food", name: "Food", type: .expense),
+        Category(image: "Beverage", name: "Beverage" , type: .expense),
+        Category(image: "Car", name: "Car", type: .expense),
+        Category(image: "Public transportation", name: "Public transportation" , type: .expense),
+        Category(image: "Shopping", name: "Shopping", type: .expense),
+        Category(image: "Bills", name: "Bills" , type: .expense),
+        Category(image: "Family", name: "Family", type: .expense),
+        Category(image: "Entertainment", name: "Entertainment" , type: .expense),
+        Category(image: "Health & Fitness", name: "Health & Fitness" , type: .expense),
+        Category(image: "Pet", name: "Pet" , type: .expense),
+        Category(image: "Education", name: "Education" , type: .expense),
+        Category(image: "Other Expense", name: "Other Expense", type: CategoryType.expense)
     ]
     
     var incomeCategory: [Category] = [
-        Category(image: "salary", name: "Salary", type: .income),
-        Category(image: "other", name: "Other income" , type: .income),
-        Category(image: "incoming", name: "Incoming transfer", type: .income),
-        Category(image: "threedots", name: "Uncategorized Income" , type: .income),
-        Category(image: "allowance", name: "Allowance", type: .income)
+        Category(image: "Salary", name: "Salary", type: .income),
+        Category(image: "Other income", name: "Other income" , type: .income),
+        Category(image: "Incoming transfer", name: "Incoming transfer", type: .income),
+        Category(image: "Uncategorized Income", name: "Uncategorized Income" , type: .income),
+        Category(image: "Allowance", name: "Allowance", type: .income)
     ]
 
     
@@ -61,6 +61,12 @@ class CategoryViewController: UIViewController {
         
         self.expenseLabel.text = self.expenseLabel.text!.localized()
         self.incomeLabel.text = self.incomeLabel.text!.localized()
+        
+        categoryType.font =  UIFont(name: CustomFont().font, size: categoryType.font.pointSize)
+        
+        expenseLabel.font =  UIFont(name: CustomFont().font, size: expenseLabel.font.pointSize)
+        
+        incomeLabel.font =  UIFont(name: CustomFont().font, size: incomeLabel.font.pointSize)
         
     }
     
@@ -90,7 +96,8 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
             
         
             cell.category.text = expenseCategory[itemIndex].name.localized()
-            cell.photo.image = UIImage(named: expenseCategory[itemIndex].name)
+            cell.photo.image = UIImage(named: expenseCategory[itemIndex].image)
+            
            
            
             
@@ -103,7 +110,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
             
         
             cell.category.text = incomeCategory[itemIndex].name.localized()
-            cell.photo.image = UIImage(named: incomeCategory[itemIndex].name)
+            cell.photo.image = UIImage(named: incomeCategory[itemIndex].image)
            
            
             

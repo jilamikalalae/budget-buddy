@@ -58,3 +58,11 @@
 "" = "";
 
 "Home" = "หน้าหลัก";
+
+// Error
+"Amount is required" = "โปรดใส่จำนวนเงิน";
+"Category is required" = "โปรดเลือกหมวดหมู่";
+
+
+//
+"Sign in With Google" = "เข้าสู่ระบบด้วย Google";
