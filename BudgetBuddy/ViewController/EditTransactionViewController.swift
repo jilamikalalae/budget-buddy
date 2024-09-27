@@ -54,8 +54,7 @@ class EditTransactionViewController: UIViewController {
         amountTextFeild.text = String(transaction.amount)
         
         self.categoryLabel.text = self.categoryLabel.text!.localized()
-        self.categoryButton.setTitle("Select category".localized(), for: .normal)
-        categoryButton.setTitle(transaction.category, for: .normal)
+        self.categoryButton.setTitle(transaction.category.localized(), for: .normal)
         categoryButton.setTitleColor(.black, for: .normal)
         
         self.noteLabel.text = self.noteLabel.text!.localized()

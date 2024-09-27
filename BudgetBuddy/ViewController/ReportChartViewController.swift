@@ -16,13 +16,14 @@ class ReportChartViewController: UIViewController {
     
     @IBOutlet weak var balance: UILabel!
     
-    @IBOutlet weak var totalThisMonth: UILabel!
     
     @IBOutlet weak var expense: UILabel!
     @IBOutlet weak var expensePieChart: PieChartView!
+    @IBOutlet weak var expenseLabel: UILabel!
     
     @IBOutlet weak var income: UILabel!
     @IBOutlet weak var incomePieChart: PieChartView!
+    @IBOutlet weak var incomeLabel: UILabel!
     
     
     var transactionData: [TransactionData] = []
@@ -65,6 +66,11 @@ class ReportChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.incomeLabel.text = self.incomeLabel.text!.localized()
+        incomeLabel.font = UIFont(name: CustomFont().font, size: incomeLabel.font.pointSize)
+        
+        self.expenseLabel.text = self.expenseLabel.text!.localized()
+        expenseLabel.font = UIFont(name: CustomFont().font, size: expenseLabel.font.pointSize)
         
         fetchTransactions()
           
@@ -77,7 +83,7 @@ class ReportChartViewController: UIViewController {
             return TransactionDetail(
                 id: transactionData.id,
                 image: transactionData.imgUrl,  // Assuming 'image' maps to 'imgUrl'
-                category: transactionData.category,
+                category: transactionData.category.localized(),
                 amount: Int(transactionData.amount),  // Converting Float to Int
                 categoryIcon: transactionData.categoryIcon,
                 date: transactionData.date,

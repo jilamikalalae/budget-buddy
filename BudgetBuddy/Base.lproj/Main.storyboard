@@ -591,7 +591,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="33d-Ob-dCo">
-                                <rect key="frame" x="40" y="67" width="313" height="303.33333333333337"/>
+                                <rect key="frame" x="40" y="67" width="313" height="303.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcb-cD-mBZ">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="20.333333333333332"/>
@@ -880,19 +880,19 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m7-eT-7Or">
-                                                        <rect key="frame" x="40" y="23" width="149" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="40" y="23" width="149" height="17"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoM-RL-fey">
-                                                        <rect key="frame" x="40" y="52" width="149" height="20.333333333333329"/>
+                                                        <rect key="frame" x="40" y="48.666666666666657" width="149" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7t-4w-EFn" customClass="PieChartView" customModule="DGCharts">
-                                                        <rect key="frame" x="60" y="85" width="273" height="273"/>
+                                                        <rect key="frame" x="60" y="81.666666666666657" width="273" height="273"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="F7t-4w-EFn" secondAttribute="height" multiplier="1:1" id="PS8-0W-4k2"/>
@@ -987,8 +987,10 @@
                     <connections>
                         <outlet property="balance" destination="edf-8K-5ag" id="jDO-dG-vqb"/>
                         <outlet property="expense" destination="aoM-RL-fey" id="i9T-U7-eQT"/>
+                        <outlet property="expenseLabel" destination="2m7-eT-7Or" id="dyP-TH-A8v"/>
                         <outlet property="expensePieChart" destination="F7t-4w-EFn" id="LfF-s0-Zz5"/>
                         <outlet property="income" destination="YxI-RN-in1" id="H3M-v0-gAI"/>
+                        <outlet property="incomeLabel" destination="c4o-lp-fwn" id="fRN-Q4-Kep"/>
                         <outlet property="incomePieChart" destination="H1i-Lo-09S" id="T6c-3H-R5d"/>
                     </connections>
                 </viewController>
