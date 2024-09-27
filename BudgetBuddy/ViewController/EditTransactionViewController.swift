@@ -36,6 +36,18 @@ class EditTransactionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let url = URL(string: transaction.image) {
+            uploadImage.load(url: url)
+        }
+        
+        
+        
+        
+        
+        
+        uploadButton.isHidden = true
 
         self.amountLabel.text = self.amountLabel.text!.localized()
         self.amountTextFeild.placeholder = self.amountTextFeild.placeholder!.localized()
@@ -48,7 +60,12 @@ class EditTransactionViewController: UIViewController {
         
         self.noteLabel.text = self.noteLabel.text!.localized()
         self.noteTextField.placeholder = self.noteTextField.placeholder!.localized()
-        noteTextField.text = transaction.note
+        
+        if transaction.note == "" {
+            noteTextField.text = "-"
+        } else {
+            noteTextField.text = transaction.note
+        }
         
         self.dateLabel.text = self.dateLabel.text!.localized()
         showDate.text = transaction.date
@@ -143,3 +160,5 @@ extension EditTransactionViewController: CategoryViewDelegate {
 
     }
 }
+
+

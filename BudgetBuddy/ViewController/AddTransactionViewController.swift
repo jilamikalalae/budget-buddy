@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
 class AddTransactionViewController: UIViewController  {
    
@@ -42,6 +43,10 @@ class AddTransactionViewController: UIViewController  {
     var categoryIcon: String = ""
     
     
+    let storage = Storage.storage().reference()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.amount.delegate = self
@@ -66,9 +71,6 @@ class AddTransactionViewController: UIViewController  {
         
 
         datePicker.calendar = Calendar(identifier: .gregorian)
-        
-        
-       
         
         
         
@@ -141,6 +143,7 @@ class AddTransactionViewController: UIViewController  {
     
     
     @IBAction func btnAddTransaction(_ sender: Any) {
+        
         if !validateText() {
             return
         }
@@ -151,7 +154,39 @@ class AddTransactionViewController: UIViewController  {
             return
         }
         
+        let storageRef = storage.child("images/file.png")
+        if let imagePng = uploadImage.image?.pngData() {
+            storageRef.putData(imagePng,
+                               metadata: nil,
+                               completion: {_, error in
+                    guard error == nil else {
+                        print("Failed to upload")
+                        return
+                    }
+                    storageRef.downloadURL(completion: {url , error in
+                            guard error == nil else {
+                                print("Failed to upload")
+                                return
+                            }
+                        
+                       
+                        let urlString  = url!.absoluteString
+                        self.createTransaction(url: urlString)
+                        }
+                    )
+                }
+            )
+        } else {
+            createTransaction(url: "")
+        }
         
+       
+        
+       
+        
+    }
+    
+    func createTransaction(url: String) {
         let amountNSNumber = NSNumber(value: amount.text!.ToFloat())
         let transactionId = UUID().uuidString
         
@@ -163,15 +198,13 @@ class AddTransactionViewController: UIViewController  {
             "type": categoryType.stringValue,
             "note": note.text!,
             "date": date.date.ToString(),
-            "imgUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos%2Fpic&psig=AOvVaw3IxhsedtYFoOfboKSqMeoA&ust=1727106064934000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNiku83x1ogDFQAAAAAdAAAAABAE"
+            "imgUrl": url
             
         ]
        
         let userId = Auth.auth().currentUser!.uid
         database.child("users").child(userId).child(transactionId).setValue(transaction)
-        
         navigateToTransaction()
-        
     }
     
     
@@ -221,6 +254,8 @@ extension AddTransactionViewController: UIImagePickerControllerDelegate, UINavig
         
         if let image = info[.originalImage] as? UIImage{
             self.uploadImage.image = image
+            
+            
         }
         
         dismiss(animated: true)

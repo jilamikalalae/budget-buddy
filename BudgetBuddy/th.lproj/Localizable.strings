@@ -1,4 +1,4 @@
-//Add Transaction Page
+// Add Transaction Page
 "Add Transaction" = "เพิ่มรายการ";
 "Amount" = "จำนวนเงิน";
 "Enter amount" = "กรอกจำนวนเงิน";
@@ -66,3 +66,7 @@
 
 //
 "Sign in With Google" = "เข้าสู่ระบบด้วย Google";
+
+
+// report
+"Report" = "รายงาน"

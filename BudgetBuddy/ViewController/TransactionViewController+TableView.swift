@@ -70,11 +70,10 @@ class TransactionViewController: UIViewController, TransactionTableViewCellDeleg
             self.transaction = self.mapTransactions(transactionDataArray: self.transactionData)
             print(self.transaction)
             
-            var totalBalance = self.calculateBalance()
+            let totalBalance = self.calculateBalance()
             
             self.balance.text = String(totalBalance)
             self.storeBalance(balance: totalBalance)
-            
             
             self.tableView.reloadData()
             
@@ -84,6 +83,8 @@ class TransactionViewController: UIViewController, TransactionTableViewCellDeleg
         
     }
     
+  
+
     func calculateBalance() -> Float {
         var balance:Float = 0.0
         for v in transactionData {
