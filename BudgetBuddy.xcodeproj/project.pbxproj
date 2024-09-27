@@ -12,6 +12,8 @@
 		76033F6C2CA461C100893435 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76033F6B2CA461C100893435 /* AppFont.swift */; };
 		760ED12D2C9DF945008B9458 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760ED12C2C9DF945008B9458 /* StringExtension.swift */; };
 		760ED1302C9DFAB4008B9458 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 760ED12E2C9DFAB4008B9458 /* Localizable.strings */; };
+		761B0E762CA5CA43007299E9 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 761B0E752CA5CA43007299E9 /* DGCharts */; };
+		761B0E782CA5CAB4007299E9 /* ReportChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B0E772CA5CAB4007299E9 /* ReportChartViewController.swift */; };
 		761FC9482CA2B24300A7FFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761FC9472CA2B24300A7FFFB /* Assets.xcassets */; };
 		763E82812C9B175C002CA5B4 /* CategoryViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E82802C9B175B002CA5B4 /* CategoryViewController+CollectionView.swift */; };
 		763E82832C9B27DA002CA5B4 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E82822C9B27DA002CA5B4 /* CategoryCollectionViewCell.swift */; };
@@ -82,6 +84,7 @@
 		760ED12C2C9DF945008B9458 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		760ED12F2C9DFAB4008B9458 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		760ED1312C9DFAF0008B9458 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		761B0E772CA5CAB4007299E9 /* ReportChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportChartViewController.swift; sourceTree = "<group>"; };
 		761FC9472CA2B24300A7FFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		763E82802C9B175B002CA5B4 /* CategoryViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		763E82822C9B27DA002CA5B4 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 				765C66952CA0177100799327 /* GoogleSignInSwift in Frameworks */,
 				765C66902CA0170E00799327 /* FirebaseStorage in Frameworks */,
 				765C668A2CA0170E00799327 /* FirebaseAuth in Frameworks */,
+				761B0E762CA5CA43007299E9 /* DGCharts in Frameworks */,
 				765C66932CA0177100799327 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +171,7 @@
 				76B9862D2C9EC9AB0057D92F /* EditTransactionViewController.swift */,
 				765B7F162C9F39F200388F05 /* TabBarController.swift */,
 				765C66982CA01C6200799327 /* LoginViewController.swift */,
+				761B0E772CA5CAB4007299E9 /* ReportChartViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				765C668F2CA0170E00799327 /* FirebaseStorage */,
 				765C66922CA0177100799327 /* GoogleSignIn */,
 				765C66942CA0177100799327 /* GoogleSignInSwift */,
+				761B0E752CA5CA43007299E9 /* DGCharts */,
 			);
 			productName = BudgetBuddy;
 			productReference = 769C6BA72C883BD00065B19B /* BudgetBuddy.app */;
@@ -404,6 +410,7 @@
 				763E82882C9B2D5C002CA5B4 /* AddTransactionViewController.swift in Sources */,
 				765B7F102C9F178100388F05 /* Balance.swift in Sources */,
 				769C6BAB2C883BD00065B19B /* AppDelegate.swift in Sources */,
+				761B0E782CA5CAB4007299E9 /* ReportChartViewController.swift in Sources */,
 				769C6BAD2C883BD00065B19B /* SceneDelegate.swift in Sources */,
 				763E82832C9B27DA002CA5B4 /* CategoryCollectionViewCell.swift in Sources */,
 				765C669D2CA073E100799327 /* TransactionData.swift in Sources */,
@@ -765,6 +772,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		761B0E752CA5CA43007299E9 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 766F4C512C9C058500418061 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
 		765C66892CA0170E00799327 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 765C66882CA0170E00799327 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
